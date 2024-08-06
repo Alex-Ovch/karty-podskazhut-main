@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+:root {
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+  --main-font: "Raleway";
+  --accent-font: "STIX Two Text";
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font), "Times New Roman", "Arial";
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  font-family: var(--accent-font), "Times New Roman", "Arial";
+  font-weight: 600;
+
+  line-height: 90%;
+}
+
+.header {
+  padding-top: 10%;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-bottom: 40px;
+}
+
+.content-section {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.content__title {
+  font-size: 30px;
+  margin-top: 7%;
+  margin-bottom: 2.5%;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.link {
+  color: inherit;
+}
+
+.modify__text {
+  text-decoration: underline;
+}
+
+.content__blockquote {
+  display: flex;
+
+  width: 75%;
+  font-style: italic;
+  line-height: 200%;
+  margin: 0 12.5% 1.5em 12.5%;
+}
+
+.content__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content__list_item {
+  position: relative;
+  padding-inline-start: 40px;
+}
+
+.content__list_item:not(:last-child) {
+  padding-bottom: 10px;
+}
+
+.content__list_item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  /* transform: translateY(-5%); */
+  width: 15px;
+  height: 15px;
+  background-image: url(/images/marker-light.svg);
+  background-size: contain; /* Подгоняем картинку под размер квадрата */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content__text-block_type_first-lettered:first-letter {
+  display: inline-block;
+  background-color: var(--accent-color);
+  padding: 0 4px 0 4px;
+  margin-right: 5px;
+  font-size: 30px;
+  font-weight: 700;
+}
